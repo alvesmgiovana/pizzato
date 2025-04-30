@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="src/styles/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Pizzato</title>
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <i class="fa-solid fa-pizza-slice" id="nav_logo"> Pizzato</i>
+
+            <ul id="nav_list">
+                <li class="nav-item">
+                    <a onclick="openPage('index', this)">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a onclick="openPage('cardapio', this)">Cardápio</a>
+                </li>
+                <li class="nav-item">
+                    <a onclick="openPage('about', this)">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a onclick="openPage('testimonial', this)">Avaliação</a>
+                </li>
+            </ul>
+
+            <button class="btn-default">
+                Peça aqui
+            </button>
+
+            <button class="mobile_btn" id="mobile_btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+
+        <div id="mobile_menu">
+
+            <ul id="mobile_nav_list">
+                <li class="nav-item">
+                    <a onclick="openPage('index', this)">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a onclick="openPage('cardapio', this)">Cardápio</a>
+                </li>
+                <li class="nav-item">
+                    <a onclick="openPage('about', this)">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a onclick="openPage('testimonial', this)">Avaliação</a>
+                </li>
+            </ul>
+
+            <button class="btn-default">
+                Peça aqui
+            </button>
+        </div>
+    </header>
+    <main id="content">
+        <section id="about">
+            <div id="about_content">
+                <div class="text-principal">
+                    <h3 class="section-title">
+                        Conheça nossa história
+                    </h3>
+                    <h2 class="section-subtitle">
+                        Na Pizzato, acreditamos que uma boa pizza vai muito além da receita — ela carrega histórias,
+                        encontros e sorrisos.
+                    </h2>
+                    <p>
+                        Fundada com o propósito de unir tradição e criatividade, nossa pizzaria nasceu da paixão por
+                        sabores autênticos e momentos inesquecíveis.
+                    </p>
+                    <p>
+                        Trabalhamos com ingredientes frescos, massas artesanais e um toque especial em cada preparo.
+                        Aqui, cada pizza é feita com carinho, respeitando o tempo certo do forno e valorizando o que há
+                        de melhor na culinária italiana com aquele jeitinho brasileiro.
+                    </p>
+                    <p>
+                        Nosso compromisso é oferecer uma experiência acolhedora, seja no salão ou no conforto da sua
+                        casa. Afinal, para nós, pizza boa é aquela que alimenta o corpo e o coração.
+                    </p>
+
+                    <div class="location">
+                        <h2>Nosso endereço</h2>
+                        <p>
+                            <i class="fa-solid fa-location-dot"></i>
+                            Rua das Pitangueiras, 357 – Vila Mariana, São Paulo – SP, 04115-000
+                        </p>
+                    </div>
+
+                </div>
+                <img src="src/img/image1.png" class="about-image">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <img src="src/img/wave.svg" alt="Onda decorativa do rodapé">
+
+        <div id="footer_items">
+            <span id="copyright">
+                &copy; 2025 Giovana Magalhães
+            </span>
+
+            <div class="social-media-buttons">
+                <a href="">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/javascript/script.js"></script>
+</body>
+
+</html>

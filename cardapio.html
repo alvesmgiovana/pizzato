@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="src/styles/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Pizzato</title>
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <i class="fa-solid fa-pizza-slice" id="nav_logo"> Pizzato</i>
+
+            <ul id="nav_list">
+                <li class="nav-item">
+                    <a onclick="openPage('index', this)">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a onclick="openPage('cardapio', this)">Cardápio</a>
+                </li>
+                <li class="nav-item">
+                    <a onclick="openPage('about', this)">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a onclick="openPage('testimonial', this)">Avaliação</a>
+                </li>
+            </ul>
+
+            <button class="btn-default">
+                Peça aqui
+            </button>
+
+            <button class="mobile_btn" id="mobile_btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+
+        <div id="mobile_menu">
+
+            <ul id="mobile_nav_list">
+                <li class="nav-item">
+                    <a onclick="openPage('index', this)">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a onclick="openPage('cardapio', this)">Cardápio</a>
+                </li>
+                <li class="nav-item">
+                    <a onclick="openPage('about', this)">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a onclick="openPage('testimonial', this)">Avaliação</a>
+                </li>
+            </ul>
+
+            <button class="btn-default">
+                Peça aqui
+            </button>
+        </div>
+    </header>
+    <main id="content">
+        <section id="menu">
+            <h3 class="section-title">Cardápio</h3>
+            <h2 class="section-subtitle">Alguns de nossos sabores favoritos</h2>
+
+            <div id="dishes">
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <img src="src/img/sabor1.png" class="dish-image" alt="">
+                    <h3 class="dish-title">Pizza Especial da Casa</h3>
+                    <span class="dish-description">Molho artesanal, calabresa, carne temperada e pimentões. Uma combinação irresistível.</span>
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(500+)</span>
+                    </div>
+                    <div class="dish-price">
+                        <h4>R$50,00</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <img src="src/img/sabor2.png" class="dish-image" alt="">
+                    <h3 class="dish-title">Pizza de Calabresa</h3>
+                    <span class="dish-description">Molho de tomate, queijo muçarela e muita calabresa fatiada.</span>
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(500+)</span>
+                    </div>
+                    <div class="dish-price">
+                        <h4>R$40,00</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <img src="src/img/sabor3.png" class="dish-image" alt="">
+                    <h3 class="dish-title">Pizza Vegetariana</h3>
+                    <span class="dish-description">Mix colorido de pimentões, azeitonas, cogumelos, cebola e tomates
+                        frescos.</span>
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(500+)</span>
+                    </div>
+                    <div class="dish-price">
+                        <h4>R$35,00</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <img src="src/img/sabor4.png" class="dish-image" alt="">
+                    <h3 class="dish-title">Pizza Marguerita</h3>
+                    <span class="dish-description">Simples e deliciosa: molho de tomate, muçarela, manjericão fresco e
+                        um fio de azeite.</span>
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(500+)</span>
+                    </div>
+                    <div class="dish-price">
+                        <h4>R$40,00</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <footer>
+        <img src="src/img/wave.svg" alt="">
+
+        <div id="footer_items">
+            <span id="copyright">
+                &copy 2025 Giovana Magalhães
+            </span>
+
+            <div class="social-media-buttons">
+                <a href="">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+    <script src="src/javascript/script.js"></script>
+</body>
+
+</html>

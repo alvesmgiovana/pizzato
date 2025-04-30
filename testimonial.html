@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="src/styles/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Pizzato</title>
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <i class="fa-solid fa-pizza-slice" id="nav_logo"> Pizzato</i>
+
+            <ul id="nav_list">
+                <li class="nav-item">
+                    <a onclick="openPage('index', this)">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a onclick="openPage('cardapio', this)">Cardápio</a>
+                </li>
+                <li class="nav-item">
+                    <a onclick="openPage('about', this)">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a onclick="openPage('testimonial', this)">Avaliação</a>
+                </li>
+            </ul>
+
+            <button class="btn-default">
+                Peça aqui
+            </button>
+
+            <button class="mobile_btn" id="mobile_btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+
+        <div id="mobile_menu">
+
+            <ul id="mobile_nav_list">
+                <li class="nav-item">
+                    <a onclick="openPage('index', this)">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a onclick="openPage('cardapio', this)">Cardápio</a>
+                </li>
+                <li class="nav-item">
+                    <a onclick="openPage('about', this)">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a onclick="openPage('testimonial', this)">Avaliação</a>
+                </li>
+            </ul>
+
+            <button class="btn-default">
+                Peça aqui
+            </button>
+        </div>
+    </header>
+    <main id="content">
+        <section id="testimonials">
+            <img src="src/img/chef.png" id="testimonial_chef">
+            <div id="testimonials_content">
+                <h3 class="section-title">
+                    Depoimentos
+                </h3>
+                <h2 class="section-subtitle">
+                    O que os clientes falam sobre nós
+                </h2>
+
+                <div id="feedbacks">
+                    <div class="feedback">
+                        <img src="src/img/avatar.jpg" class="feedback-avatar">
+
+                        <div class="feedback-content">
+                            <p class="feedback-client"> Isabela Queiroz
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>
+                            </p>
+
+                            <p>
+                                "A melhor pizza que já comi! Massa leve, recheio caprichado e chegou quentinha. Super recomendo!"
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feedback">
+                        <img src="src/img/avatar2.jpg" class="feedback-avatar">
+
+                        <div class="feedback-content">
+                            <p class="feedback-client"> Emanuel de Souza
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>
+                            </p>
+
+                            <p>
+                                "Simplesmente sensacional! Atendimento rápido e sabor incomparável. Já virou minha pizzaria favorita."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-default">
+                    Ver mais avaliações
+                </button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <img src="src/img/wave.svg" alt="">
+
+        <div id="footer_items">
+            <span id="copyright">
+                &copy 2025 Giovana Magalhães
+            </span>
+
+            <div class="social-media-buttons">
+                <a href="">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+    <script src="src/javascript/script.js"></script>
+</body>
+
+</html>
