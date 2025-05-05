@@ -4,8 +4,6 @@ $(document).ready(function () {
         $('#mobile_btn').find('i').toggleClass('fa-x');
     });
 
-    const navItems = $('.nav-item');
-
     const currentPage = window.location.pathname.split('/').pop();
 
     document.querySelectorAll('#nav_list a').forEach(link => {
