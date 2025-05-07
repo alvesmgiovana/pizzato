@@ -36,6 +36,11 @@ header {
     border-bottom: 3px solid #87a36f;
 }
 
+.btn-default a {
+    text-decoration: none;
+    color: #1d1d1d;
+}
+
 #mobile_btn {
     display: none;
 }

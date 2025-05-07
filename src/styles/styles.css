@@ -76,3 +76,61 @@ section {
 .section-subtitle {
     font-size: 1.563rem;
 }
+
+.forms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 8px;
+    width: 700px;
+}
+
+.form-box h2 {
+    padding: 24px 32px;
+    font-size: 24px;
+    border-bottom: thin solid #ccc;
+    color: #EA3E49;
+}
+
+.form-box form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 32px;
+}
+
+.form-box input,
+.form-box textarea {
+    width: calc(50% - 8px);
+    height: 48px;
+    border-radius: 8px;
+    border: thin solid #999;
+    padding-left: 16px;
+    margin-bottom: 16px;
+    font-size: 16px;
+}
+
+.form-box input:first-child{
+    margin-right: 16px;
+}
+
+.form-box input[name=subject] {
+    width: 100%;
+}
+
+.form-box textarea {
+    width: 100%;
+    height: 180px;
+    padding: 16px;
+}
+
+.form-box button {
+    width: 180px;
+    height: 48px;
+}

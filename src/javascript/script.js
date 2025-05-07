@@ -1,17 +1,11 @@
 $(document).ready(function () {
+    // Menu mobile toggle
     $('#mobile_btn').on('click', function () {
         $('#mobile_menu').toggleClass('active');
         $('#mobile_btn').find('i').toggleClass('fa-x');
     });
 
-    const currentPage = window.location.pathname.split('/').pop();
-
-    document.querySelectorAll('#nav_list a').forEach(link => {
-        if (link.getAttribute("href") === currentPage) {
-            link.parentElement.classList.add('active');
-        }
-    });
-
+    // Sombra no header ao rolar
     $(window).on('scroll', function () {
         const header = $('header');
         const scrollPosition = $(window).scrollTop() - header.outerHeight();
@@ -23,43 +17,36 @@ $(document).ready(function () {
         }
     });
 
-    // Função global para carregar páginas dinâmicas e aplicar animações e menu ativo
-    window.openPage = function (pageName, clickedLink) {
-        fetch(pageName + '.html')
-            .then(response => response.text())
-            .then(html => {
-                const tempDiv = document.createElement('div');
-                tempDiv.innerHTML = html;
+    // Destacar o item ativo no menu
+    const currentPage = window.location.pathname.split('/').pop(); // Ex: cardapio.html
 
-                // Remove header e footer
-                const header = tempDiv.querySelector('header');
-                const footer = tempDiv.querySelector('footer');
-                if (header) header.remove();
-                if (footer) footer.remove();
+    document.querySelectorAll('#nav_list a').forEach(link => {
+        const href = link.getAttribute("href");
+        if (href === currentPage || (href === 'index.html' && currentPage === '')) {
+            link.parentElement.classList.add('active');
+        }
+    });
 
-                // Insere conteúdo carregado
-                document.getElementById('content').innerHTML = tempDiv.innerHTML;
-
-                // Atualiza item de menu ativo
-                document.querySelectorAll('.nav-item').forEach(item => {
-                    item.classList.remove('active');
-                });
-                if (clickedLink && clickedLink.parentElement.classList.contains('nav-item')) {
-                    clickedLink.parentElement.classList.add('active');
-                }
-
-                // Reaplica animações ScrollReveal no novo conteúdo
-                ScrollReveal().clean('#content');
-                ScrollReveal().reveal('#cta', { origin: 'left', duration: 2000, distance: '20%' });
-                ScrollReveal().reveal('.dish', { origin: 'right', duration: 2000, distance: '20%' });
-                ScrollReveal().reveal('#about', { origin: 'left', duration: 2000, distance: '20%' });
-                ScrollReveal().reveal('#testimonials', { origin: 'right', duration: 2000, distance: '20%' });
-            });
-    };
-
-    // Inicializa ScrollReveal no conteúdo inicial (página carregada por padrão)
+    // ScrollReveal nas seções conhecidas
     ScrollReveal().reveal('#cta', { origin: 'left', duration: 2000, distance: '20%' });
     ScrollReveal().reveal('.dish', { origin: 'right', duration: 2000, distance: '20%' });
     ScrollReveal().reveal('#about', { origin: 'left', duration: 2000, distance: '20%' });
     ScrollReveal().reveal('#testimonials', { origin: 'right', duration: 2000, distance: '20%' });
+    ScrollReveal().reveal('.forms', { origin: 'left', duration: 2000, distance: '20%' });
 });
+
+//Validando formulário
+function validarFormulario(event) {
+    event.preventDefault(); // Impede o envio padrão do formulário
+    const formulario = document.getElementById('formulario');
+    const nome = formulario.querySelector('input[name="name"]').value.trim();
+    const email = formulario.querySelector('input[name="email"]').value.trim();
+    const assunto = formulario.querySelector('input[name="subject"]').value.trim();
+    const mensagem = formulario.querySelector('textarea[name="message"]').value.trim();
+
+    if (nome !== '' && email !== '' && assunto !== '' && mensagem !== '') {
+        alert('Mensagem enviada com sucesso!');
+    } else {
+        alert('Por favor, preencha todos os campos do formulário.');
+    }
+}

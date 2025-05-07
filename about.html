@@ -14,11 +14,11 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9D3XERYH3"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-Q9D3XERYH3');
+    gtag('config', 'G-Q9D3XERYH3');
 </script>
 
 <body>
@@ -28,48 +28,49 @@
 
             <ul id="nav_list">
                 <li class="nav-item">
-                    <a onclick="openPage('index', this)">Início</a>
+                    <a href="index.html"">Início</a>
                 </li>
-                <li class="nav-item">
-                    <a onclick="openPage('cardapio', this)">Cardápio</a>
+                <li class=" nav-item">
+                        <a href="cardapio.html"">Cardápio</a>
                 </li>
-                <li class="nav-item">
-                    <a onclick="openPage('about', this)">Sobre</a>
+                <li class=" nav-item">
+                            <a href="about.html"">Sobre</a>
                 </li>
-                <li class="nav-item">
-                    <a onclick="openPage('testimonial', this)">Avaliação</a>
+                <li class=" nav-item">
+                                <a href="testimonial.html"">Avaliação</a>
                 </li>
             </ul>
 
-            <button class="btn-default">
-                Peça aqui
-            </button>
+            <button class=" btn-default">
+                                    <a href="https://www.ifood.com.br/">Peça aqui</a>
+                                    </button>
 
-            <button class="mobile_btn" id="mobile_btn">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+                                    <button class="mobile_btn" id="mobile_btn">
+                                        <i class="fa-solid fa-bars"></i>
+                                    </button>
         </nav>
 
         <div id="mobile_menu">
 
             <ul id="mobile_nav_list">
                 <li class="nav-item">
-                    <a onclick="openPage('index', this)">Início</a>
+                    <a href="index.html"">Início</a>
                 </li>
-                <li class="nav-item">
-                    <a onclick="openPage('cardapio', this)">Cardápio</a>
+                <li class=" nav-item">
+                        <a href="cardapio.html"">Cardápio</a>
                 </li>
-                <li class="nav-item">
-                    <a onclick="openPage('about', this)">Sobre</a>
+                <li class=" nav-item">
+                            <a href="about.html"">Sobre</a>
                 </li>
-                <li class="nav-item">
-                    <a onclick="openPage('testimonial', this)">Avaliação</a>
+                <li class=" nav-item">
+                                <a href="testimonial.html"">Avaliação</a>
                 </li>
             </ul>
 
-            <button class="btn-default">
-                Peça aqui
-            </button>
+            <button class=" btn-default">
+                                    <a href="https://www.ifood.com.br/">Peça aqui</a>
+                                    </button>
+
         </div>
     </header>
     <main id="content">
@@ -99,10 +100,12 @@
 
                     <div class="location">
                         <h2>Nosso endereço</h2>
-                        <p>
-                            <i class="fa-solid fa-location-dot"></i>
-                            Rua das Pitangueiras, 357 – Vila Mariana, São Paulo – SP, 04115-000
-                        </p>
+                        <div class="maps-button">
+                            <a href="https://maps.app.goo.gl/13o31tbzpwhjMqKr8">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p> Rua Prof. Lourival Gomes Machado, 308 - Santana, São Paulo - SP, 02021-050</p>
+                            </a>
+                        </div>
                     </div>
 
                 </div>
@@ -120,20 +123,34 @@
             </span>
 
             <div class="social-media-buttons">
-                <a href="">
+                <a href="https://web.whatsapp.com/">
                     <i class="fa-brands fa-whatsapp"></i>
                 </a>
-                <a href="">
+                <a href="https://www.instagram.com/">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
-                <a href="">
+                <a href="https://pt-br.facebook.com/login">
                     <i class="fa-brands fa-facebook"></i>
                 </a>
             </div>
         </div>
     </footer>
-
     <script src="src/javascript/script.js"></script>
+    <!-- GA4 – Evento de clique genérico -->
+    <script>
+        document.querySelectorAll('button, a').forEach((btn) => { //Para cada botão ou link encontrado, o código dentro da função é executado.
+            btn.addEventListener('click', function () { //Sempre que um botão ou link for clicado, a função dentro será acionada.
+                const identificacao = this.className || this.innerText.trim() || 'botao_sem_identificacao';
+                const pagina = window.location.pathname;
+
+                gtag('event', 'click_button', {
+                    event_category: 'botao',
+                    event_label: identificacao,
+                    page_path: pagina
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -50,6 +50,21 @@
     margin-bottom: 8px;
 }
 
+.location .maps-button a {
+    text-decoration: none; 
+    display: flex; 
+    align-items: center; 
+  }
+  
+  .location .maps-button i {
+    margin-right: 10px;
+    color: #1d1d1d;
+  }
+  
+  .location .maps-button p {
+    margin: 0; 
+  }
+
 @media screen and (max-width: 1170px) {
     #about_content {
         flex-direction: column;
