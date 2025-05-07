@@ -14,11 +14,11 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9D3XERYH3"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-Q9D3XERYH3');
+    gtag('config', 'G-Q9D3XERYH3');
 </script>
 
 <body>
@@ -27,25 +27,25 @@
             <i class="fa-solid fa-pizza-slice" id="nav_logo"> Pizzato</i>
 
             <ul id="nav_list">
-                <li class="nav-item">
+                <li class="nav-item" data-label="inicio_nav_list">
                     <a onclick="openPage('index', this)">Início</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-label="cardapio_nav_list">
                     <a onclick="openPage('cardapio', this)">Cardápio</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-label="sobre_nav_list">
                     <a onclick="openPage('about', this)">Sobre</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-label="avaliacao_nav_list">
                     <a onclick="openPage('testimonial', this)">Avaliação</a>
                 </li>
             </ul>
 
-            <button class="btn-default">
+            <button class="btn-default" data-label="peça_aqui_header">
                 Peça aqui
             </button>
 
-            <button class="mobile_btn" id="mobile_btn">
+            <button class="mobile_btn" id="mobile_btn" data-label="menu_mobile">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </nav>
@@ -53,23 +53,24 @@
         <div id="mobile_menu">
 
             <ul id="mobile_nav_list">
-                <li class="nav-item">
+                <li class="nav-item" data-label="inicio_nav_list">
                     <a onclick="openPage('index', this)">Início</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-label="cardapio_nav_list">
                     <a onclick="openPage('cardapio', this)">Cardápio</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-label="sobre_nav_list">
                     <a onclick="openPage('about', this)">Sobre</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-label="avaliacao_nav_list">
                     <a onclick="openPage('testimonial', this)">Avaliação</a>
                 </li>
             </ul>
 
-            <button class="btn-default">
+            <button class="btn-default" data-label="peça_aqui_mobile">
                 Peça aqui
             </button>
+            
         </div>
     </header>
     <main id="content">
@@ -85,8 +86,8 @@
                     carinho.</p>
 
                 <div id="cta_buttons">
-                    <a onclick="openPage('cardapio', this)" class="btn-default">Ver cardápio</a>
-                    <a href="tel:+555555555" id="phone_button">
+                    <a onclick="openPage('cardapio', this)" class="btn-default" data-label="ver_cardapio_cta">Ver cardápio</a>
+                    <a href="tel:+555555555" id="phone_button" data-label="ligar_tel">
                         <button class="btn-default">
                             <i class="fa-solid fa-phone"></i>
                         </button>
@@ -94,13 +95,13 @@
                     </a>
                 </div>
                 <div class="social-media-buttons">
-                    <a href="">
+                    <a href="" data-label="whatsapp_social">
                         <i class="fa-brands fa-whatsapp"></i>
                     </a>
-                    <a href="">
+                    <a href="" data-label="instagram_social">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
-                    <a href="">
+                    <a href="" data-label="facebook_social">
                         <i class="fa-brands fa-facebook"></i>
                     </a>
                 </div>
@@ -108,10 +109,8 @@
             </div>
             <div id="banner">
                 <img src="src/img/juntos.png" alt="">
-
             </div>
         </section>
-
     </main>
     <footer>
         <img src="src/img/wave.svg" alt="">
@@ -122,13 +121,13 @@
             </span>
 
             <div class="social-media-buttons">
-                <a href="">
+                <a href="" data-label="whatsapp_social_footer">
                     <i class="fa-brands fa-whatsapp"></i>
                 </a>
-                <a href="">
+                <a href="" data-label="instagram_social_footer">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
-                <a href="">
+                <a href="" data-label="facebook_social_footer">
                     <i class="fa-brands fa-facebook"></i>
                 </a>
             </div>
@@ -136,6 +135,25 @@
         </div>
     </footer>
     <script src="src/javascript/script.js"></script>
+
+    <!-- Eventos criados -->
+    <script>
+        document.querySelectorAll('button, a').forEach((btn) => { // Para cada botão ou link encontrado, o código dentro da função é executado.
+            btn.addEventListener('click', function () { // Sempre que um botão ou link for clicado, a função dentro será acionada.
+
+                const identificacao = this.innerText.trim() || this.getAttribute('title') || this.getAttribute('data-label') || 'botao_sem_identificacao';
+            
+                const pagina = window.location.pathname;
+
+                gtag('event', 'click_button', {
+                    'event_category': 'botao',
+                    'event_label': identificacao,
+                    'page_path': pagina
+                });
+            });
+        });
+    </script>
+
 </body>
 
 </html>
