@@ -140,9 +140,7 @@
     <script>
         document.querySelectorAll('button, a').forEach((btn) => { // Para cada botão ou link encontrado, o código dentro da função é executado.
             btn.addEventListener('click', function () { // Sempre que um botão ou link for clicado, a função dentro será acionada.
-
-                const identificacao = this.innerText.trim() || this.getAttribute('title') || this.getAttribute('data-label') || 'botao_sem_identificacao';
-            
+                const identificacao = this.className || 'botao_sem_identificacao';
                 const pagina = window.location.pathname;
 
                 gtag('event', 'click_button', {
