@@ -18,7 +18,7 @@ $(document).ready(function () {
     });
 
     // Destacar o item ativo no menu
-    const currentPage = window.location.pathname.split('/').pop(); // Ex: cardapio.html
+    const currentPage = window.location.pathname.split('/').pop();
 
     document.querySelectorAll('#nav_list a').forEach(link => {
         const href = link.getAttribute("href");
