@@ -12,7 +12,7 @@ O projeto **Pizzaria Pizzato** foi desenvolvido com o objetivo de criar uma inte
 
 ## 🍕 Resultado Final
 
-🔗 Acesse o projeto.
+🔗 Acesse o projeto: https://alvesmgiovana.github.io/pizzato/
 
 ![Image](https://github.com/user-attachments/assets/4d046601-cbfd-46fd-bca0-1b8c20ed32d9)
 ![Image](https://github.com/user-attachments/assets/0dfab84f-2f88-4221-b184-996a78ff9ff6)
