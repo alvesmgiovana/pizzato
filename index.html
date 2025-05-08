@@ -31,23 +31,23 @@
                     <a href="index.html"">Início</a>
                 </li>
                 <li class=" nav-item">
-                    <a href="cardapio.html"">Cardápio</a>
+                        <a href="cardapio.html"">Cardápio</a>
                 </li>
                 <li class=" nav-item">
-                     <a href="about.html"">Sobre</a>
+                            <a href="about.html"">Sobre</a>
                 </li>
                 <li class=" nav-item">
-                    <a href="testimonial.html"">Avaliação</a>
+                                <a href="testimonial.html"">Avaliação</a>
                 </li>
             </ul>
 
             <button class=" btn-default">
-                 <a href="https://www.ifood.com.br/">Peça aqui</a>
-            </button>
+                                    <a href="https://www.ifood.com.br/">Peça aqui</a>
+                                    </button>
 
-            <button class="mobile_btn" id="mobile_btn">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+                                    <button class="mobile_btn" id="mobile_btn">
+                                        <i class="fa-solid fa-bars"></i>
+                                    </button>
         </nav>
 
         <div id="mobile_menu">
@@ -57,19 +57,19 @@
                     <a href="index.html"">Início</a>
                 </li>
                 <li class=" nav-item">
-                    <a href="cardapio.html"">Cardápio</a>
+                        <a href="cardapio.html"">Cardápio</a>
                 </li>
                 <li class=" nav-item">
-                     <a href="about.html"">Sobre</a>
+                            <a href="about.html"">Sobre</a>
                 </li>
                 <li class=" nav-item">
-                    <a href="testimonial.html"">Avaliação</a>
+                                <a href="testimonial.html"">Avaliação</a>
                 </li>
             </ul>
 
             <button class=" btn-default">
-                <a href="https://www.ifood.com.br/">Peça aqui</a>
-            </button>
+                                    <a href="https://www.ifood.com.br/">Peça aqui</a>
+                                    </button>
 
         </div>
     </header>
@@ -140,14 +140,15 @@
     <script src="src/javascript/script.js"></script>
     <!-- GA4 – Evento de clique genérico -->
     <script>
-        document.querySelectorAll('button, a').forEach((btn) => { //Para cada botão ou link encontrado, o código dentro da função é executado.
-            btn.addEventListener('click', function () { //Sempre que um botão ou link for clicado, a função dentro será acionada.
-                const identificacao = this.id || this.className || this.innerText.trim() || 'botao_sem_identificacao';
+        document.querySelectorAll('button, a').forEach((btn) => { 
+            btn.addEventListener('click', function () { 
+                const identificacao = this.id || this.className || 'botao_sem_identificacao';
+                const descricao = this.innerText.trim() || 'botao_sem_descricao';
                 const pagina = window.location.pathname;
 
                 gtag('event', 'click_button', {
                     event_category: 'botao',
-                    event_label: identificacao,
+                    event_label: identificacao + ' - ' + descricao,
                     page_path: pagina
                 });
             });
