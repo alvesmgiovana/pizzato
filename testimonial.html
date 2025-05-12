@@ -32,23 +32,24 @@
                     <a href="index.html"">Início</a>
                 </li>
                 <li class=" nav-item">
-                    <a href="cardapio.html"">Cardápio</a>
+                        <a href="cardapio.html"">Cardápio</a>
                 </li>
                 <li class=" nav-item">
-                    <a href="about.html"">Sobre</a>
+                            <a href="about.html"">Sobre</a>
                 </li>
                 <li class=" nav-item">
-                    <a href="testimonial.html"">Avaliação</a>
+                                <a href="testimonial.html"">Avaliação</a>
                 </li>
             </ul>
 
-            <button class=" btn-default">
+            <button class=" btn-default" data-section="header" data-type="menu" data-title="peça-aqui">
                 <a href="https://www.ifood.com.br/">Peça aqui</a>
             </button>
 
-            <button class="mobile_btn" id="mobile_btn">
+            <button class="mobile_btn" id="mobile_btn" data-section="header" data-type="menu-mobile" data-title="versão-do-menu-mobile">
                 <i class="fa-solid fa-bars"></i>
             </button>
+            
         </nav>
 
         <div id="mobile_menu">
@@ -68,7 +69,7 @@
                 </li>
             </ul>
 
-            <button class=" btn-default">
+            <button class=" btn-default" data-section="header" data-type="menu-mobile" data-title="peça-aqui">
                 <a href="https://www.ifood.com.br/">Peça aqui</a>
             </button>
 
@@ -129,7 +130,7 @@
                     </div>
                 </div>
 
-                <button class="btn-default">
+                <button class="btn-default" data-section="main" data-type="botão-avaliações" data-title="ver-mais-avaliações">
                     <a href="https://g.co/kgs/7s8PkZm">Ver mais avaliações</a>
                 </button>
             </div>
@@ -142,7 +143,7 @@
                     <input type="email" name="email" placeholder="Seu e-mail">
                     <input type="text" name="subject" placeholder="Assunto">
                     <textarea name="message" placeholder="Digite sua mensagem"></textarea>
-                    <button type="submit" class="btn-default" onclick="validarFormulario(event)">Enviar</button>
+                    <button type="submit" class="btn-default" onclick="validarFormulario(event)" data-section="main" data-type="botão-formulário" data-title="enviar">Enviar</button>
                 </form>
             </div>
         </section>
@@ -156,32 +157,39 @@
             </span>
 
             <div class="social-media-buttons">
-                <a href="https://web.whatsapp.com/">
+                <a href="https://web.whatsapp.com/" data-section="footer" data-type="botão-rede-social"
+                    data-title="whatsapp">
                     <i class="fa-brands fa-whatsapp"></i>
                 </a>
-                <a href="https://www.instagram.com/">
+                <a href="https://www.instagram.com/" data-section="footer" data-type="botão-rede-social"
+                    data-title="instagram">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
-                <a href="https://pt-br.facebook.com/login">
+                <a href="https://pt-br.facebook.com/login" data-section="footer" data-type="botão-rede-social"
+                    data-title="facebook">
                     <i class="fa-brands fa-facebook"></i>
                 </a>
             </div>
 
         </div>
+
     </footer>
     <script src="src/javascript/script.js"></script>
     <!-- GA4 – Evento de clique genérico -->
     <script>
-        document.querySelectorAll('button, a').forEach((btn) => { 
-            btn.addEventListener('click', function () { 
-                const identificacao = this.id || this.className || 'botao_sem_identificacao';
-                const descricao = this.innerText.trim() || 'botao_sem_descricao';
-                const pagina = window.location.pathname;
+        document.querySelectorAll('a, button').forEach((elemento) => {
+            elemento.addEventListener('click', function () {
+                const tipo = this.dataset.type || 'desconhecido';
+                const secao = this.dataset.section ||this.id || this.className || 'desconhecido';
+                const titulo = this.dataset.title || this.innerText.trim().toLowerCase();
+                const caminhoPagina = window.location.pathname;
 
                 gtag('event', 'click_button', {
-                    event_category: 'botao',
-                    event_label: identificacao + ' - ' + descricao,
-                    page_path: pagina
+                    event_category: 'botao/link',
+                    event_section: secao,
+                    event_type: tipo,
+                    event_title: titulo,
+                    page_path: caminhoPagina
                 });
             });
         });
