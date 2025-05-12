@@ -179,13 +179,12 @@
     <script>
         document.querySelectorAll('a, button').forEach((elemento) => {
             elemento.addEventListener('click', function () {
-                const categoria = this.tagName.toLowerCase() === 'button' ? 'botao' : 'link';
                 const tipo = this.dataset.type || 'desconhecido';
                 const secao = this.dataset.section ||this.id || this.className || 'desconhecido';
                 const titulo = this.dataset.title || this.innerText.trim().toLowerCase();
 
                 gtag('event', 'click_button', {
-                    event_category: categoria,
+                    event_category: "botão/link",
                     event_section: secao,
                     event_type: tipo,
                     event_title: titulo,
