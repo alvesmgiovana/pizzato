@@ -101,7 +101,7 @@
                     <div class="location">
                         <h2>Nosso endereço</h2>
                         <div class="maps-button">
-                            <a href="https://maps.app.goo.gl/13o31tbzpwhjMqKr8" data-section="main" data-type="link-endereço" data-title="endereço">
+                            <a href="https://maps.app.goo.gl/13o31tbzpwhjMqKr8" data-category="sobre" data-section="conheca-nossa-historia" data-type="link" data-title="endereco">
                                 <i class="fa-solid fa-location-dot"></i>
                                 <p> Rua Prof. Lourival Gomes Machado, 308 - Santana, São Paulo - SP, 02021-050</p>
                             </a>
@@ -140,18 +140,18 @@
     <script src="src/javascript/script.js"></script>
     <!-- GA4 – Evento de clique genérico -->
     <script>
-        document.querySelectorAll('a, button').forEach((elemento) => {
+        document.querySelectorAll('a, button, li').forEach((elemento) => {
             elemento.addEventListener('click', function () {
+                const categoria = this.dataset.category;
                 const tipo = this.dataset.type || 'desconhecido';
-                const secao = this.dataset.section ||this.id || this.className || 'desconhecido';
+                const secao = this.dataset.section || 'desconhecido';
                 const titulo = this.dataset.title || this.innerText.trim().toLowerCase();
 
-                gtag('event', 'click_button', {
-                    event_category: "botão/link",
+                gtag('event', 'clique', {
+                    event_category: categoria,
                     event_section: secao,
                     event_type: tipo,
                     event_title: titulo,
-                    page_path: window.location.pathname
                 });
             });
         });

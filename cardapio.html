@@ -99,7 +99,7 @@
                     </div>
                     <div class="dish-price">
                         <h4>R$50,00</h4>
-                        <button class="btn-default" data-section="main" data-type="botao-carrinho" data-title="sabor-especial">
+                        <button class="btn-default" data-category="cardapio" data-section="alguns-de-nossos-sabores" data-type="botao" data-title="carrinho-pizza-especial">
                             <i class="fa-solid fa-basket-shopping"></i>
                         </button>
                     </div>
@@ -122,7 +122,7 @@
                     </div>
                     <div class="dish-price">
                         <h4>R$40,00</h4>
-                        <button class="btn-default" data-section="main" data-type="botao-carrinho" data-title="sabor-calabresa">
+                        <button class="btn-default" data-category="cardapio" data-section="alguns-de-nossos-sabores" data-type="botao" data-title="carrinho-pizza-calabresa">
                             <i class="fa-solid fa-basket-shopping"></i>
                         </button>
                     </div>
@@ -146,7 +146,7 @@
                     </div>
                     <div class="dish-price">
                         <h4>R$35,00</h4>
-                        <button class="btn-default" data-section="main" data-type="botao-carrinho" data-title="sabor-vegetariana">
+                        <button class="btn-default" data-category="cardapio" data-section="alguns-de-nossos-sabores"data-type="botao" data-title="carrinho-pizza-vegetariana">
                             <i class="fa-solid fa-basket-shopping"></i>
                         </button>
                     </div>
@@ -170,7 +170,7 @@
                     </div>
                     <div class="dish-price">
                         <h4>R$40,00</h4>
-                        <button class="btn-default" data-section="main" data-type="botao-carrinho" data-title="sabor-marguerita">
+                        <button class="btn-default" data-category="cardapio" data-section="alguns-de-nossos-sabores"data-type="botao" data-title="carrinho-pizza-marguerita">
                             <i class="fa-solid fa-basket-shopping"></i>
                         </button>
                     </div>
@@ -206,14 +206,14 @@
     <script src="src/javascript/script.js"></script>
     <!-- GA4 – Evento de clique genérico -->
     <script>
-        document.querySelectorAll('a, button').forEach((elemento) => {
+        document.querySelectorAll('a, button, li').forEach((elemento) => {
             elemento.addEventListener('click', function () {
                 const categoria = this.dataset.category;
                 const tipo = this.dataset.type || 'desconhecido';
                 const secao = this.dataset.section || 'desconhecido';
                 const titulo = this.dataset.title || this.innerText.trim().toLowerCase();
 
-                gtag('event', 'click_button', {
+                gtag('event', 'clique', {
                     event_category: categoria,
                     event_section: secao,
                     event_type: tipo,

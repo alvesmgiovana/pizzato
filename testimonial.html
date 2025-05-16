@@ -128,7 +128,7 @@
                     </div>
                 </div>
 
-                <button class="btn-default" data-section="main" data-type="botão-avaliações" data-title="ver-mais-avaliações">
+                <button class="btn-default" data-category="avaliacao" data-section="depoimentos" data-type="botao" data-title="ver-mais-avaliacoes">
                     <a href="https://g.co/kgs/7s8PkZm">Ver mais avaliações</a>
                 </button>
             </div>
@@ -141,7 +141,7 @@
                     <input type="email" name="email" placeholder="Seu e-mail">
                     <input type="text" name="subject" placeholder="Assunto">
                     <textarea name="message" placeholder="Digite sua mensagem"></textarea>
-                    <button type="submit" class="btn-default" onclick="validarFormulario(event)" data-section="main" data-type="botão-formulário" data-title="enviar">Enviar</button>
+                    <button type="submit" class="btn-default" onclick="validarFormulario(event)" data-category="avaliacao" data-section="formulario" data-type="botao" data-title="enviar">Enviar</button>
                 </form>
             </div>
         </section>
@@ -173,18 +173,18 @@
     <script src="src/javascript/script.js"></script>
     <!-- GA4 – Evento de clique genérico -->
     <script>
-        document.querySelectorAll('a, button').forEach((elemento) => {
+        document.querySelectorAll('a, button, li').forEach((elemento) => {
             elemento.addEventListener('click', function () {
+                const categoria = this.dataset.category;
                 const tipo = this.dataset.type || 'desconhecido';
-                const secao = this.dataset.section ||this.id || this.className || 'desconhecido';
+                const secao = this.dataset.section || 'desconhecido';
                 const titulo = this.dataset.title || this.innerText.trim().toLowerCase();
 
-                gtag('event', 'click_button', {
-                    event_category: "botão/link",
+                gtag('event', 'clique', {
+                    event_category: categoria,
                     event_section: secao,
                     event_type: tipo,
                     event_title: titulo,
-                    page_path: window.location.pathname
                 });
             });
         });
