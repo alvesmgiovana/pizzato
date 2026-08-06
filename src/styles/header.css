@@ -47,6 +47,9 @@ header {
 
 #mobile_menu {
     display: none;
+    width: 100%;
+    background-color: #F5F1ED;
+    padding-bottom: 16px;
 }
 
 @media screen and (max-width: 1170px){
@@ -67,6 +70,7 @@ header {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
 
     #mobile_nav_list{
@@ -74,6 +78,8 @@ header {
         flex-direction: column;
         gap: 12px;
         margin: 12px 0px;
+        width: 100%;
+        padding: 0 16px;
     }
 
     #mobile_nav_list .nav-item {
@@ -81,4 +87,12 @@ header {
         text-align: center;
     }
 
+    #mobile_menu .btn-default {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    header {
+        padding: 24px 6%;
+    }
 }
