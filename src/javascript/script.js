@@ -28,6 +28,7 @@ $(document).ready(function () {
     });
 
     // ScrollReveal nas seções conhecidas
+    ScrollReveal().reveal('#banner', { origin: 'right', duration: 2000, distance: '20%' });
     ScrollReveal().reveal('#cta', { origin: 'left', duration: 2000, distance: '20%' });
     ScrollReveal().reveal('.dish', { origin: 'right', duration: 2000, distance: '20%' });
     ScrollReveal().reveal('#about', { origin: 'left', duration: 2000, distance: '20%' });

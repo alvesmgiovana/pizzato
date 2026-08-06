@@ -94,7 +94,7 @@
                         Conheça nossa história
                     </h3>
                     <h2 class="section-subtitle">
-                        Na Pizzato, acreditamos que uma boa pizza vai muito além da receita — ela carrega histórias,
+                        Na Pizzato, acreditamos que uma boa pizza vai muito além da receita. Ela carrega histórias,
                         encontros e sorrisos.
                     </h2>
                     <p>
@@ -128,7 +128,7 @@
         </section>
     </main>
     <footer>
-        <img src="src/img/wave.svg" alt="">
+        <img class="footer-wave inverted" src="src/img/wave.svg" alt="" aria-hidden="true">
 
         <div id="footer_items">
             <span id="copyright">
@@ -154,11 +154,9 @@
 
     </footer>
     <script src="src/javascript/script.js"></script>
-    <!-- GTM – Evento de clique genérico -->
     <script>
         document.querySelectorAll('a, button, li').forEach((elemento) => {
             elemento.addEventListener('click', function () {
-                const categoria = this.dataset.category;
                 const tipo = this.dataset.type || 'desconhecido';
                 const secao = this.dataset.section || 'desconhecido';
                 const titulo = this.dataset.title || this.innerText.trim().toLowerCase();
@@ -166,14 +164,12 @@
                 window.dataLayer = window.dataLayer || [];
                 window.dataLayer.push({
                     'event': 'clique',
-                    'event_category': categoria,
-                    'event_section': secao,
-                    'event_type': tipo,
-                    'event_title': titulo,
+                    'custom_section': secao,
+                    'custom_type': tipo,
+                    'custom_title': titulo,
                 });
             });
         });
     </script>
-</body>
 
 </html>

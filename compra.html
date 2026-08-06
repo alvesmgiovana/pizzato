@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-N3PQB63P');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="shortcut icon" href="/src/img/icon-pizzato.ico" type="image/x-icon">
+  <link rel="stylesheet" href="src/styles/compra.css">
+  <link rel="stylesheet" href="src/styles/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <title>Pizzato</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N3PQB63P" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+    <nav id="navbar">
+      <i class="fa-solid fa-pizza-slice" id="nav_logo"> Pizzato</i>
+
+      <ul id="nav_list">
+        <li class="nav-item" data-category="home" data-section="header" data-type="link" data-title="inicio">
+          <a href="index.html">Início</a>
+        </li>
+        <li class=" nav-item">
+          <a href="cardapio.html" data-category="home" data-section="header" data-type="link" data-title="cardapio">Cardápio</a>
+        </li>
+        <li class=" nav-item">
+          <a href="about.html" data-category="home" data-section="header" data-type="link" data-title="sobre">Sobre</a>
+        </li>
+        <li class=" nav-item">
+          <a href="testimonial.html" data-category="home" data-section="header" data-type="link" data-title="avaliacao">Avaliação</a>
+        </li>
+      </ul>
+
+      <button class=" btn-default" data-category="home" data-section="header" data-type="botao" data-title="peça-aqui">
+        <a href="https://www.ifood.com.br/">Peça aqui</a>
+      </button>
+
+      <button class="mobile_btn" id="mobile_btn" data-category="menu" data-section="header" data-type="botao" data-title="versao-do-menu-mobile">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+
+    <div id="mobile_menu">
+
+      <ul id="mobile_nav_list">
+        <li class="nav-item" data-category="home" data-section="header" data-type="link" data-title="inicio">
+          <a href="index.html">Início</a>
+        </li>
+        <li class=" nav-item">
+          <a href="cardapio.html" data-category="home" data-section="header" data-type="link" data-title="cardapio">Cardápio</a>
+        </li>
+        <li class=" nav-item">
+          <a href="about.html" data-category="home" data-section="header" data-type="link" data-title="sobre">Sobre</a>
+        </li>
+        <li class=" nav-item">
+          <a href="testimonial.html" data-category="home" data-section="header" data-type="link" data-title="avaliacao">Avaliação</a>
+        </li>
+      </ul>
+
+      <button class=" btn-default" data-category="home" data-section="header" data-type="botao" data-title="peça-aqui">
+        <a href="https://www.ifood.com.br/">Peça aqui</a>
+      </button>
+    </div>
+
+    </header>
+
+  <main class="container">
+    <div class="receipt-card">
+
+      <div class="receipt-header">
+        <span class="check-icon">&#10003;</span>
+        <h1>Pedido confirmado com sucesso!</h1>
+        <p>Enviamos os detalhes para o seu e-mail.</p>
+        <div class="receipt-status">
+          <span>CONFIRMADO</span>
+          <small>04-08-2026</small>
+        </div>
+      </div>
+
+      <div class="receipt-info">
+        <div class="info-row">
+          <span class="info-label">Nº do Pedido</span>
+          <span class="info-value">PZT-2026-0483</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Data do Pedido</span>
+          <span class="info-value">04/08/2026</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Subtotal</span>
+          <span class="info-value">R$ 175,00</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Taxa de Entrega</span>
+          <span class="info-value">R$ 8,00</span>
+        </div>
+        <div class="info-row total-row">
+          <span class="info-label">Total</span>
+          <span class="info-value">R$ 183,00</span>
+        </div>
+      </div>
+
+      <div class="receipt-customer">
+        <p><span class="info-label">Cliente:</span> <span class="info-value">Ana Ribeiro</span></p>
+        <p><span class="info-label">E-mail:</span> <span class="info-value">ana.ribeiro@exemplo.com</span></p>
+      </div>
+
+      <table class="receipt-table">
+        <thead>
+          <tr>
+            <th>Sabor</th>
+            <th>Qtd</th>
+            <th>Preço</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pizza Especial da Casa</td>
+            <td>2</td>
+            <td>R$ 50,00</td>
+            <td>R$ 100,00</td>
+          </tr>
+          <tr>
+            <td>Pizza de Calabresa</td>
+            <td>1</td>
+            <td>R$ 40,00</td>
+            <td>R$ 40,00</td>
+          </tr>
+          <tr>
+            <td>Pizza Vegetariana</td>
+            <td>1</td>
+            <td>R$ 35,00</td>
+            <td>R$ 35,00</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <a href="cardapio.html" class="btn-back">Voltar ao cardápio</a>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <img class="footer-wave inverted" src="src/img/wave.svg" alt="" aria-hidden="true">
+
+    <div id="footer_items">
+      <span id="copyright">
+        &copy 2025 Giovana Magalhães
+      </span>
+
+      <div class="social-media-buttons">
+        <a href="https://web.whatsapp.com/" data-category="home" data-section="footer" data-type="botao" data-title="whatsapp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="https://www.instagram.com/" data-category="home" data-section="footer" data-type="botao" data-title="instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://pt-br.facebook.com/login" data-category="home" data-section="footer" data-type="botao" data-title="facebook">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script src="src/javascript/script.js"></script>
+  <script>
+    document.querySelectorAll('a, button, li').forEach((elemento) => {
+        elemento.addEventListener('click', function () {
+            const categoria = this.dataset.category;
+            const tipo = this.dataset.type || 'desconhecido';
+            const secao = this.dataset.section || 'desconhecido';
+            const titulo = this.dataset.title || this.innerText.trim().toLowerCase();
+
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'clique',
+                'event_category': categoria,
+                'event_section': secao,
+                'event_type': tipo,
+                'event_title': titulo,
+            });
+        });
+    });
+  </script>
+
+</body>
+
+</html>

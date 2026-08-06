@@ -2,8 +2,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+    justify-content: flex-start;
+    min-height: calc(100vh - 91px);
+    padding-top: 24px;
+}
+
+#menu .section-title,
+#menu .section-subtitle {
+    text-align: center;
 }
 
 #dishes {
